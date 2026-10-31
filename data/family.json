@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "title_hi": "सिंह परिवार की वंशावली",
+    "title_en": "The Singh Family — Vanshavali",
+    "origin_hi": "मूल स्थान: मैन▢र (उत्तर प्रदेश) — मूल दस्तावेज़ में स्थान-नाम आंशिक रूप से फटा हुआ",
+    "origin_en": "Ancestral origin: a place in Uttar Pradesh (name partly torn in the original)",
+    "source_hi": "स्रोत: पारिवारिक हस्तलिखित वंशावली (हिन्दी) से यथावत् उद्धृत",
+    "source_en": "Transcribed from the original handwritten family chart",
+    "year": 2026,
+    "generations": 8
+  },
+  "branches": {
+    "root": { "hi": "मूल", "en": "Root", "color": "#D2622A" },
+    "bochaha": { "hi": "बोचहा शाखा", "en": "Bochaha", "color": "#8B3A1E" },
+    "bamaura": { "hi": "बमौरा (मुख्य)", "en": "Bamaura (main)", "color": "#1F5E4A" },
+    "third": { "hi": "तृतीय शाखा", "en": "Third branch", "color": "#8A6A12" },
+    "sahitgarhi": { "hi": "साहिटगड़ही शाखा", "en": "Sahitgarhi", "color": "#2C3A6B" }
+  },
+  "legend": {
+    "clear_hi": "स्पष्ट पठित नाम", "clear_en": "Clearly legible",
+    "uncertain_hi": "अस्पष्ट / अनुमानित (?)", "uncertain_en": "Unclear / inferred (?)",
+    "confirm_hi": "संभावित पहचान — पुष्टि करें", "confirm_en": "Possible identification — please confirm",
+    "childless_hi": "✗ नावल्द = निःसंतान", "childless_en": "✗ nāvald = without issue"
+  },
+  "people": [
+    { "id": "dullah", "hi": "दुल्लह सिंह", "en": "Dullah Singh", "gen": 1, "branch": "root", "parent": null,
+      "tag_hi": "बमौरा में बसे", "tag_en": "settled at Bamaura" },
+
+    { "id": "dirghlal", "hi": "दीर्घलाल सिंह", "en": "Dirghlal Singh", "gen": 2, "branch": "bochaha", "parent": "dullah", "tag_hi": "बोचहा", "tag_en": "Bochaha" },
+    { "id": "reetlal", "hi": "रीतलाल सिंह", "en": "Reetlal Singh", "gen": 2, "branch": "bamaura", "parent": "dullah" },
+    { "id": "sukhram", "hi": "सुखराम सिंह", "en": "Sukhram Singh", "gen": 2, "branch": "third", "parent": "dullah", "uncertain": true, "uncertainLink": true },
+    { "id": "mangani", "hi": "मंगनी सिंह", "en": "Mangani Singh", "gen": 2, "branch": "sahitgarhi", "parent": "dullah", "tag_hi": "साहिटगड़ही", "tag_en": "Sahitgarhi" },
+
+    { "id": "rasbihari", "hi": "रास बिहारी सिंह", "en": "Ras Bihari Singh", "gen": 3, "branch": "bochaha", "parent": "dirghlal" },
+    { "id": "rambhajju", "hi": "राम भज्जू सिंह", "en": "Ram Bhajju Singh", "gen": 3, "branch": "bamaura", "parent": "reetlal" },
+    { "id": "chhatthu", "hi": "छट्ठू सिंह", "en": "Chhatthu Singh", "gen": 3, "branch": "third", "parent": "sukhram" },
+    { "id": "hanuman", "hi": "हनुमान सिंह", "en": "Hanuman Singh", "gen": 3, "branch": "sahitgarhi", "parent": "mangani" },
+
+    { "id": "roopnarayan", "hi": "रूप नारायण सिंह", "en": "Roop Narayan Singh", "gen": 4, "branch": "bochaha", "parent": "rasbihari" },
+    { "id": "ramcharitra", "hi": "रामचरित्र सिंह", "en": "Ramcharitra Singh", "gen": 4, "branch": "bamaura", "parent": "rambhajju" },
+    { "id": "ramdev", "hi": "रामदेव सिंह", "en": "Ramdev Singh", "gen": 4, "branch": "bamaura", "parent": "rambhajju" },
+    { "id": "dhanukdhari", "hi": "धनुकधारी सिंह", "en": "Dhanukdhari Singh", "gen": 4, "branch": "third", "parent": "chhatthu", "lineEnded": true,
+      "note_hi": "शादी से पहले साँप काटने से मृत्यु — वंश समाप्त ✗", "note_en": "Died of snakebite before marriage — line ended" },
+    { "id": "ajab", "hi": "अज्जब सिंह", "en": "Ajab Singh", "gen": 4, "branch": "sahitgarhi", "parent": "hanuman" },
+    { "id": "bajrangi", "hi": "बजरंगी सिंह", "en": "Bajrangi Singh", "gen": 4, "branch": "sahitgarhi", "parent": "hanuman" },
+
+    { "id": "raghunandan", "hi": "रघुनन्दन सिंह", "en": "Raghunandan Singh", "gen": 5, "branch": "bochaha", "parent": "roopnarayan" },
+    { "id": "shribhagwan", "hi": "श्रीभगवान सिंह", "en": "Shri Bhagwan Singh", "gen": 5, "branch": "bochaha", "parent": "roopnarayan" },
+    { "id": "shrimangal", "hi": "श्रीमंगल सिंह", "en": "Shri Mangal Singh", "gen": 5, "branch": "bamaura", "parent": "ramcharitra" },
+    { "id": "basudev", "hi": "बासुदेव सिंह", "en": "Basudev Singh", "gen": 5, "branch": "bamaura", "parent": "ramcharitra" },
+    { "id": "sukhdev", "hi": "सुखदेव सिंह", "en": "Sukhdev Singh", "gen": 5, "branch": "bamaura", "parent": "ramcharitra" },
+    { "id": "sahdev", "hi": "सहदेव सिंह", "en": "Sahdev Singh", "gen": 5, "branch": "bamaura", "parent": "ramcharitra", "childless": true,
+      "note_hi": "नावल्द ✗ निःसंतान", "note_en": "Without issue" },
+    { "id": "ramsharan", "hi": "रामशरण सिंह", "en": "Ramsharan Singh", "gen": 5, "branch": "bamaura", "parent": "ramdev" },
+    { "id": "lakshmi", "hi": "लक्ष्मी सिंह", "en": "Lakshmi Singh", "gen": 5, "branch": "sahitgarhi", "parent": "ajab" },
+    { "id": "jayprakash", "hi": "जयप्रकाश सिंह", "en": "Jayprakash Singh", "gen": 5, "branch": "sahitgarhi", "parent": "bajrangi" },
+    { "id": "nandlal", "hi": "नन्दलाल सिंह", "en": "Nandlal Singh", "gen": 5, "branch": "sahitgarhi", "parent": "bajrangi" },
+
+    { "id": "triveni", "hi": "त्रिवेणी सिंह", "en": "Triveni Singh", "gen": 6, "branch": "bochaha", "parent": "raghunandan" },
+    { "id": "bangali", "hi": "बंगाली सिंह", "en": "Bangali Singh", "gen": 6, "branch": "bochaha", "parent": "raghunandan" },
+    { "id": "bindeshwari", "hi": "बिन्देश्वरी सिंह", "en": "Bindeshwari Singh", "gen": 6, "branch": "bochaha", "parent": "raghunandan" },
+    { "id": "ishwar", "hi": "ईश्वर सिंह", "en": "Ishwar Singh", "gen": 6, "branch": "bochaha", "parent": "shribhagwan" },
+    { "id": "ramvanshi", "hi": "रामवंशी सिंह", "en": "Ramvanshi Singh", "gen": 6, "branch": "bamaura", "parent": "shrimangal" },
+    { "id": "brijvanshi", "hi": "बृजवंशी सिंह", "en": "Brijvanshi Singh", "gen": 6, "branch": "bamaura", "parent": "shrimangal", "uncertain": true, "uncertainLink": true },
+    { "id": "ramratan", "hi": "रामरतन सिंह", "en": "Ramratan Singh", "gen": 6, "branch": "bamaura", "parent": "basudev" },
+    { "id": "ramudgar", "hi": "रामउदगार सिंह", "en": "Ram Udgar Singh", "gen": 6, "branch": "bamaura", "parent": "sukhdev" },
+    { "id": "ramnaresh", "hi": "रामनरेश सिंह", "en": "Ramnaresh Singh", "gen": 6, "branch": "bamaura", "parent": "ramsharan" },
+    { "id": "rampukar", "hi": "रामपुकार सिंह", "en": "Rampukar Singh", "gen": 6, "branch": "sahitgarhi", "parent": "lakshmi" },
+    { "id": "jayprakash_sons", "group": true, "gen": 6, "branch": "sahitgarhi", "parent": "jayprakash", "uncertain": true, "uncertainLink": true,
+      "hi": "जयप्रकाश सिंह के पुत्र", "en": "Sons of Jayprakash Singh",
+      "note_hi": "पुत्र — नाम आंशिक पठनीय", "note_en": "sons, partly legible",
+      "members": [
+        { "hi": "राम नयन", "en": "Ram Nayan", "uncertain": true },
+        { "hi": "अभिमन्यु", "en": "Abhimanyu", "uncertain": true },
+        { "hi": "ओम", "en": "Om", "uncertain": true },
+        { "hi": "उपेन्द्र", "en": "Upendra", "uncertain": true },
+        { "hi": "बलिराम", "en": "Baliram", "uncertain": true },
+        { "hi": "राम बाबू", "en": "Ram Babu", "uncertain": true }
+      ] },
+    { "id": "nandlal_sons", "group": true, "gen": 6, "branch": "sahitgarhi", "parent": "nandlal", "uncertain": true, "uncertainLink": true,
+      "hi": "नन्दलाल सिंह के पुत्र", "en": "Sons of Nandlal Singh",
+      "note_hi": "पुत्र — नाम आंशिक पठनीय", "note_en": "sons, partly legible",
+      "members": [
+        { "hi": "सीताराम", "en": "Sitaram", "uncertain": true },
+        { "hi": "राजा", "en": "Raja", "uncertain": true },
+        { "hi": "अशोक", "en": "Ashok", "uncertain": true },
+        { "hi": "सुशील", "en": "Sushil", "uncertain": true },
+        { "hi": "अनिल", "en": "Anil", "uncertain": true }
+      ] },
+
+    { "id": "janardan", "hi": "जनार्दन सिंह", "en": "Janardan Singh", "gen": 7, "branch": "bochaha", "parent": "triveni" },
+    { "id": "shatrughna", "hi": "शत्रुघ्न सिंह", "en": "Shatrughna Singh", "gen": 7, "branch": "bochaha", "parent": "triveni", "uncertain": true, "uncertainLink": true },
+    { "id": "rammilan", "hi": "राम मिलन सिंह", "en": "Ram Milan Singh", "gen": 7, "branch": "bochaha", "parent": "bangali" },
+    { "id": "ramnandan", "hi": "राम नन्दन सिंह", "en": "Ram Nandan Singh", "gen": 7, "branch": "bochaha", "parent": "bangali", "tag_hi": "गया", "tag_en": "Gaya" },
+    { "id": "muneshwar", "hi": "मुनेश्वर सिंह", "en": "Muneshwar Singh", "gen": 7, "branch": "bochaha", "parent": "bindeshwari" },
+    { "id": "madhusudan", "hi": "मधुसूदन सिंह", "en": "Madhusudan Singh", "gen": 7, "branch": "bochaha", "parent": "bindeshwari" },
+    { "id": "arjun", "hi": "अर्जुन सिंह", "en": "Arjun Singh", "gen": 7, "branch": "bochaha", "parent": "bindeshwari" },
+    { "id": "rajendra", "hi": "राजेन्द्र सिंह", "en": "Rajendra Singh", "gen": 7, "branch": "bochaha", "parent": "ishwar" },
+    { "id": "bachcha", "hi": "बच्चा सिंह", "en": "Bachcha Singh", "gen": 7, "branch": "bamaura", "parent": "ramvanshi", "uncertain": true, "uncertainLink": true },
+    { "id": "ramsagar", "hi": "रामसागर सिंह", "en": "Ramsagar Singh", "gen": 7, "branch": "bamaura", "parent": "brijvanshi", "uncertain": true, "uncertainLink": true },
+    { "id": "ramsevak", "hi": "रामसेवक सिंह", "en": "Ramsevak Singh", "gen": 7, "branch": "bamaura", "parent": "ramratan", "uncertain": true, "uncertainLink": true },
+    { "id": "kumbheshwar", "hi": "कुम्भेश्वर सिंह", "en": "Kumbheshwar Singh", "gen": 7, "branch": "bamaura", "parent": "ramudgar", "uncertain": true, "uncertainLink": true },
+    { "id": "ramnaresh_sons", "group": true, "gen": 7, "branch": "bamaura", "parent": "ramnaresh", "uncertain": true, "uncertainLink": true,
+      "hi": "रामनरेश सिंह के पुत्र", "en": "Sons of Ramnaresh Singh",
+      "note_hi": "पुत्र — नाम आंशिक पठनीय, क्रम अनुमानित", "note_en": "sons, partly legible; order inferred",
+      "members": [
+        { "hi": "विश्वनाथ", "en": "Vishwanath", "uncertain": true },
+        { "hi": "पंचू", "en": "Panchu", "uncertain": true },
+        { "hi": "अजानी", "en": "Ajani", "uncertain": true },
+        { "hi": "कीरत", "en": "Keerat", "uncertain": true },
+        { "hi": "हरिदेव", "en": "Haridev", "uncertain": true },
+        { "hi": "नकुल", "en": "Nakul", "uncertain": true },
+        { "hi": "अरविंद", "en": "Arvind", "uncertain": true },
+        { "hi": "सुखदेव", "en": "Sukhdev", "uncertain": true },
+        { "hi": "चन्द्रिका", "en": "Chandrika", "uncertain": true }
+      ] },
+    { "id": "dhurjeet", "hi": "धुरजीत सिंह", "en": "Dhurjeet Singh", "gen": 7, "branch": "sahitgarhi", "parent": "rampukar", "uncertain": true, "uncertainLink": true },
+    { "id": "ajit", "hi": "अजीत सिंह", "en": "Ajit Singh", "gen": 7, "branch": "sahitgarhi", "parent": "rampukar" },
+
+    { "id": "ajit_sons", "group": true, "gen": 8, "branch": "sahitgarhi", "parent": "ajit", "confirm": true, "uncertainLink": true,
+      "hi": "अजीत सिंह के पुत्र", "en": "Sons of Ajit Singh",
+      "note_hi": "⭐ संभवतः पवन कुमार सिंह — जुड़ाव अनुमानित, पुष्टि करें",
+      "note_en": "⭐ possibly Pawan Kumar Singh — link inferred, please confirm",
+      "members": [
+        { "hi": "सुरेश", "en": "Suresh", "uncertain": true },
+        { "hi": "नावल्द", "en": "(no issue)", "childless": true },
+        { "hi": "पवन", "en": "Pawan", "highlight": true },
+        { "hi": "कमल / करन", "en": "Kamal / Karan", "uncertain": true },
+        { "hi": "विनोद", "en": "Vinod" },
+        { "hi": "प्रमोद", "en": "Pramod" },
+        { "hi": "आनन्द", "en": "Anand" },
+        { "hi": "उमेश", "en": "Umesh", "uncertain": true }
+      ] }
+  ]
+}

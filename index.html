@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#F6F0E3" />
+  <title>सिंह परिवार की वंशावली · The Singh Family Tree</title>
+  <meta name="description" content="Eight generations of the Singh family, from Dullah Singh of Bamaura — transcribed from the original handwritten vanshavali." />
+  <meta property="og:title" content="सिंह परिवार की वंशावली · The Singh Family Tree" />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23D2622A'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23FFF8EC' font-family='serif'%3Eॐ%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="frame" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="om">॥ ॐ ॥</div>
+    <h1 class="title">
+      <span class="title-hi">सिंह परिवार की वंशावली</span>
+      <span class="title-en">The Singh Family — Vanshavali</span>
+    </h1>
+    <p class="origin" data-i18n="origin"></p>
+    <nav class="branches" id="branchNav" aria-label="शाखाएँ · Branches"></nav>
+  </header>
+
+  <div class="toolbar" role="toolbar">
+    <label class="search">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="search" type="search" autocomplete="off" spellcheck="false" placeholder="" />
+      <span class="search-count" id="searchCount"></span>
+    </label>
+    <div class="tool-group">
+      <button class="tool" id="btnFit" data-i18n-title="fit"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="fit"></span></button>
+      <button class="tool" id="btnExpand" data-i18n-title="expand"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="expand"></span></button>
+      <button class="tool" id="btnCollapse" data-i18n-title="collapse"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="collapse"></span></button>
+    </div>
+    <div class="tool-group">
+      <div class="segment" id="viewToggle" role="group">
+        <button class="seg active" data-view="tree" data-i18n="tree"></button>
+        <button class="seg" data-view="list" data-i18n="list"></button>
+      </div>
+      <div class="segment" id="langToggle" role="group" aria-label="Language">
+        <button class="seg active" data-lang="hi">हिन्दी</button>
+        <button class="seg" data-lang="en">English</button>
+      </div>
+      <a class="tool" href="assets/original-chart.jpg" target="_blank" rel="noopener" data-i18n-title="original"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 16l5-5 4 4 3-3 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span data-i18n="original"></span></a>
+    </div>
+  </div>
+
+  <main class="stage">
+    <section class="viewport" id="viewport" aria-label="Family tree">
+      <div class="world" id="world">
+        <svg class="links" id="links" aria-hidden="true">
+          <g class="bands"></g>
+          <g class="edges"></g>
+        </svg>
+        <div class="nodes" id="nodes"></div>
+      </div>
+      <div class="hint" id="hint" data-i18n="hint"></div>
+      <div class="zoom-controls">
+        <button id="zoomIn" aria-label="Zoom in">+</button>
+        <button id="zoomOut" aria-label="Zoom out">−</button>
+      </div>
+    </section>
+
+    <section class="listview" id="listview" hidden aria-label="Family list"></section>
+
+    <aside class="panel" id="panel" aria-live="polite" hidden>
+      <button class="panel-close" id="panelClose" aria-label="Close">×</button>
+      <div class="panel-body" id="panelBody"></div>
+    </aside>
+  </main>
+
+  <footer class="colophon">
+    <div class="legend" id="legend"></div>
+    <p class="source" data-i18n="source"></p>
+  </footer>
+
+  <script src="vendor/d3.v7.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
