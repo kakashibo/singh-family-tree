@@ -252,6 +252,57 @@ body.lang-en .listview .l-en { font-size: 17px; color: var(--ink); }
 .listview .members { justify-content: flex-start; padding: 4px 8px 8px; margin: 0; }
 .listview .l-info { border: 0; background: transparent; cursor: pointer; color: var(--accent); font: inherit; font-size: 12px; }
 
+/* ---------- era (India in their time) — panel card ---------- */
+.era-mini { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: start; }
+.era-mini svg { width: 64px; height: 64px; padding: 6px; border-radius: 50%; background: var(--paper-deep); border: 1px solid var(--rule-soft); }
+.era-when { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-family: var(--en-font); font-weight: 600; }
+body:not(.lang-en) .era-when { font-family: var(--ui-font); letter-spacing: .02em; text-transform: none; font-weight: 500; }
+.era-when .est { color: var(--rule); font-weight: 400; text-transform: none; letter-spacing: 0; }
+.era-mini strong { display: block; font-family: var(--hi-font); font-weight: 400; font-size: 18px; margin: 2px 0; }
+body.lang-en .era-mini strong { font-family: var(--en-font); font-size: 19px; }
+.era-mini .text { margin: 2px 0 6px; }
+.linkish { border: 0; background: transparent; color: var(--accent); font: inherit; font-size: 13px; cursor: pointer; padding: 0; }
+.linkish:hover { text-decoration: underline; }
+
+/* ---------- timeline view ---------- */
+.timeline { flex: 1; overflow: auto; padding: 18px clamp(12px, 3vw, 40px) 60px; }
+.era-note { max-width: 760px; margin: 0 auto 14px; font-size: 13px; line-height: 1.5; color: var(--ink-soft); text-align: center; font-style: italic; }
+.era {
+  position: relative; display: grid; grid-template-columns: 120px 1fr; gap: 22px; max-width: 760px; margin: 0 auto;
+  padding: 20px 0 24px; animation: rise .7s var(--ease) both; animation-delay: calc(var(--i) * 90ms);
+}
+.era::before { content: ""; position: absolute; left: 59px; top: 0; bottom: 0; border-left: 2px dashed var(--rule-soft); }
+.era:first-of-type::before { top: 60px; }
+.era:last-of-type::before { bottom: auto; height: 60px; }
+.era-art {
+  position: relative; z-index: 1; width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--card); border: 1px solid var(--rule); box-shadow: var(--shadow); transition: transform .4s var(--ease);
+}
+.era:hover .era-art { transform: rotate(-4deg) scale(1.04); }
+.era-art svg { width: 92px; height: 92px; }
+.era h2 { margin: 4px 0 8px; font-family: var(--hi-font); font-weight: 400; font-size: 27px; line-height: 1.2; }
+body.lang-en .era h2 { font-family: var(--en-font); font-size: 28px; }
+.era ul { margin: 0 0 12px; padding-left: 18px; font-size: 14.5px; line-height: 1.55; }
+.era li { margin: 3px 0; }
+.era li::marker { color: var(--accent); }
+.era-people { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--ink-soft); }
+.era-people button {
+  border: 1px solid color-mix(in srgb, var(--c) 50%, transparent); color: var(--c); background: var(--card); border-radius: 999px;
+  padding: 3px 10px; font: inherit; font-size: 13px; cursor: pointer; font-family: var(--hi-font); transition: background .2s, color .2s;
+}
+body.lang-en .era-people button { font-family: var(--en-font); font-size: 14px; }
+.era-people button:hover { background: var(--c); color: #fff; }
+.era.flash .era-body { animation: flash 1.6s var(--ease) both; }
+.era { scroll-margin-top: 72px; }
+/* in the scrolling views on desktop the panel sits beside the text instead of over it */
+@media (min-width: 761px) {
+  body.view-list .panel, body.view-timeline .panel {
+    position: sticky; top: 60px; right: auto; bottom: auto; align-self: flex-start;
+    height: calc(100dvh - 60px); width: 380px; flex: 0 0 380px; animation: none;
+  }
+}
+@keyframes flash { 0% { background: #FFF1E3; box-shadow: 0 0 0 8px #FFF1E3; } 100% { background: transparent; box-shadow: 0 0 0 8px transparent; } }
+
 /* ---------- colophon ---------- */
 .colophon {
   padding: 14px clamp(12px, 3vw, 28px) 22px; border-top: 1px solid var(--rule-soft);
@@ -313,4 +364,18 @@ body.lang-en .listview .l-en { font-size: 17px; color: var(--ink); }
   .listview .l-hi { font-size: 16px; }
   .listview .l-en { font-size: 12px; }
   .origin-list { margin: 0 0 10px; font-size: 12px; color: var(--ink-soft); }
+  .timeline { padding: 10px 12px 40px; }
+  .era-note { font-size: 12px; margin-bottom: 6px; }
+  .era { grid-template-columns: 72px 1fr; gap: 12px; padding: 14px 0 16px; }
+  .era::before { left: 35px; }
+  .era:first-of-type::before { top: 36px; }
+  .era:last-of-type::before { height: 36px; }
+  .era-art { width: 72px; height: 72px; }
+  .era-art svg { width: 56px; height: 56px; }
+  .era h2 { font-size: 21px; }
+  body.lang-en .era h2 { font-size: 22px; }
+  body.lang-en .era-when { font-size: 11px; letter-spacing: .04em; }
+  .era ul { font-size: 13.5px; padding-left: 16px; }
+  .era-mini { grid-template-columns: 54px 1fr; }
+  .era-mini svg { width: 54px; height: 54px; }
 }

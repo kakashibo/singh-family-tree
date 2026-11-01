@@ -12,6 +12,8 @@
       lineage: 'वंश-क्रम', members: 'पुत्र', none: 'कोई अभिलेख नहीं', uncertain: 'अस्पष्ट / अनुमानित',
       childless: 'नावल्द · निःसंतान', lineEnded: 'वंश समाप्त', confirm: 'पुष्टि अपेक्षित',
       matches: n => `${n} मिले`, branch: 'शाखा',
+      timeline: 'समय-रेखा', era: 'उस समय का भारत', bornAbout: 'जन्म लगभग', active: 'दौर',
+      inGen: 'इस पीढ़ी में', more: 'पूरी समय-रेखा देखें', estimated: 'अनुमानित',
     },
     en: {
       origin: data.meta.origin_en, source: `${data.meta.source_en} · ${data.meta.year}`,
@@ -21,8 +23,11 @@
       lineage: 'Lineage', members: 'Sons', none: 'No record', uncertain: 'Unclear / inferred',
       childless: 'Without issue', lineEnded: 'Line ended', confirm: 'Needs confirmation',
       matches: n => `${n} found`, branch: 'Branch',
+      timeline: 'Timeline', era: 'India in their time', bornAbout: 'born c.', active: 'active',
+      inGen: 'In this generation', more: 'See the full timeline', estimated: 'estimated',
     },
   };
+  const eraOf = gen => data.eras.find(e => e.gen === gen);
 
   const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -39,7 +44,7 @@
   const $ = s => document.querySelector(s);
   const viewport = $('#viewport'), world = $('#world'), nodesEl = $('#nodes');
   const svg = d3.select('#links'), edgesG = svg.select('.edges'), bandsG = svg.select('.bands');
-  const panel = $('#panel'), panelBody = $('#panelBody'), listview = $('#listview');
+  const panel = $('#panel'), panelBody = $('#panelBody'), listview = $('#listview'), timeline = $('#timeline');
 
   // ---------- i18n ----------
   function t(k) { return STR[state.lang][k]; }
@@ -52,7 +57,12 @@
     document.querySelectorAll('#langToggle .seg').forEach(b => b.classList.toggle('active', b.dataset.lang === state.lang));
     renderBranchNav(); renderLegend();
     if (state.selected) showPanel(state.selected);
+    refreshView();
+  }
+  // re-render whichever non-tree view is showing (after a language or branch change)
+  function refreshView() {
     if (state.view === 'list') renderList();
+    if (state.view === 'timeline') renderTimeline();
   }
 
   function renderBranchNav() {
@@ -62,7 +72,7 @@
       b.className = 'branch-chip' + (key ? '' : ' all') + ((state.branch || null) === key ? ' active' : '');
       b.style.setProperty('--c', c);
       b.innerHTML = `<span class="long">${esc(label)}</span><span class="short">${esc(short)}</span>`;
-      b.onclick = () => { state.branch = key; renderBranchNav(); update(); setTimeout(fit, 50); };
+      b.onclick = () => { state.branch = key; renderBranchNav(); update(); refreshView(); setTimeout(fit, 50); };
       nav.appendChild(b);
     };
     mk(null, t('all'), t('all'), '#5B5A6B');
@@ -198,7 +208,7 @@
   }
   function cardHTML(d) {
     const p = d.data, l = state.lang;
-    let h = `<div class="card"><span class="gen-no">${t('gen')} ${p.gen}</span>
+    let h = `<div class="card"><span class="gen-no">${t('gen')} ${p.gen} · ≈${eraOf(p.gen).born}</span>
       <div class="name-hi">${esc(p.hi)}${q(p)}</div><div class="name-en">${esc(p.en)}${q(p)}</div>`;
     if (p.tag_hi) h += `<span class="tag">${esc(l === 'hi' ? p.tag_hi : p.tag_en)}</span>`;
     if (p.note_hi && !p.group) h += `<span class="note">${esc(l === 'hi' ? p.note_hi : p.note_en)}</span>`;
@@ -263,6 +273,7 @@
     if (p.childless) pills.push(`<span class="pill">✗ ${t('childless')}</span>`);
     if (p.lineEnded) pills.push(`<span class="pill">✗ ${t('lineEnded')}</span>`);
     if (p.confirm) pills.push(`<span class="pill warn">${t('confirm')}</span>`);
+    const era = eraOf(p.gen);
     panelBody.style.setProperty('--c', br.color);
     panelBody.innerHTML = `
       <div class="eyebrow">${t('gen')} ${p.gen} · ${esc(l === 'hi' ? br.hi : br.en)}</div>
@@ -271,12 +282,23 @@
       ${pills.length ? `<div class="row">${pills.join('')}</div>` : ''}
       ${p.note_hi ? `<p class="text">${esc(l === 'hi' ? p.note_hi : p.note_en)}</p>` : ''}
       ${p.members ? `<h3>${t('members')} · ${p.members.length}</h3>${membersHTML(p)}` : ''}
+      <h3>${t('era')}</h3>
+      <div class="era-mini">
+        <svg><use href="#ic-${era.icon}"/></svg>
+        <div>
+          <div class="era-when">${t('bornAbout')} ${era.born} · ${t('active')} ${esc(era['span_' + l])} <span class="est">(${t('estimated')})</span></div>
+          <strong>${esc(era['title_' + l])}</strong>
+          <p class="text">${esc(era['events_' + l][0])}</p>
+          <button class="linkish" data-era="${era.gen}">${t('more')} ›</button>
+        </div>
+      </div>
       <h3>${t('lineage')}</h3>
       <div class="lineage">${lineage.length ? lineage.map(btn).join('<span class="sep">›</span>') + '<span class="sep">›</span>' : ''}<strong style="font-family:inherit">${nm(p)}</strong></div>
       ${father ? `<h3>${t('father')}</h3><div class="kin">${btn(father)}</div>` : ''}
       <h3>${t('children')}${kids.length ? ` · ${kids.length}` : ''}</h3>
       <div class="kin">${kids.length ? kids.map(btn).join('') : `<span class="text" style="color:var(--ink-soft)">${p.members ? '—' : t('none')}</span>`}</div>`;
     panelBody.querySelectorAll('[data-go]').forEach(b => b.onclick = () => select(b.dataset.go));
+    panelBody.querySelector('[data-era]').onclick = e => goEra(+e.target.dataset.era);
     panel.hidden = false;
   }
   function closePanel() {
@@ -335,12 +357,43 @@
     listview.innerHTML = `<p class="origin-list">${esc(t('origin'))}</p>` + item(root);
     listview.querySelectorAll('[data-go]').forEach(b => b.onclick = e => { e.preventDefault(); e.stopPropagation(); state.selected = b.dataset.go; showPanel(b.dataset.go); });
   }
+  // ---------- timeline view: what India looked like in each generation ----------
+  function renderTimeline() {
+    const l = state.lang;
+    const people = data.people.filter(p => !state.branch || p.branch === 'root' || p.branch === state.branch);
+    const nm = x => esc(l === 'hi' ? x.hi : x.en);
+    timeline.innerHTML = `<p class="era-note">${esc(data['eras_note_' + l])}</p>` + data.eras.map((e, i) => {
+      const gen = people.filter(p => p.gen === e.gen);
+      return `<article class="era" id="era-${e.gen}" style="--i:${i}">
+        <div class="era-art"><svg><use href="#ic-${e.icon}"/></svg></div>
+        <div class="era-body">
+          <div class="era-when">${t('gen')} ${e.gen} · ${t('bornAbout')} ${e.born} · ${t('active')} ${esc(e['span_' + l])}</div>
+          <h2>${esc(e['title_' + l])}</h2>
+          <ul>${e['events_' + l].map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+          <div class="era-people"><span>${t('inGen')}:</span>${gen.map(p =>
+            `<button data-go="${p.id}" style="--c:${color(p.branch)}">${nm(p)}${p.uncertain ? '<span class="q">?</span>' : ''}</button>`).join('')}</div>
+        </div>
+      </article>`;
+    }).join('');
+    timeline.querySelectorAll('[data-go]').forEach(b => b.onclick = () => { state.selected = b.dataset.go; showPanel(b.dataset.go); });
+  }
+  function goEra(gen) {
+    if (isMobile()) closePanel();
+    setView('timeline');
+    const el = $(`#era-${gen}`); if (!el) return;
+    el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+  }
+
   function setView(v) {
     state.view = v;
+    document.body.classList.remove('view-tree', 'view-list', 'view-timeline');
+    document.body.classList.add('view-' + v);
     document.querySelectorAll('#viewToggle .seg').forEach(b => b.classList.toggle('active', b.dataset.view === v));
-    viewport.hidden = v !== 'tree'; listview.hidden = v !== 'list';
+    viewport.hidden = v !== 'tree'; listview.hidden = v !== 'list'; timeline.hidden = v !== 'timeline';
     $('#hint').hidden = v !== 'tree';
-    if (v === 'list') renderList(); else setTimeout(() => fit(false), 0);
+    refreshView();
+    if (v === 'tree') setTimeout(() => fit(false), 0);
   }
 
   // ---------- wire up ----------
@@ -384,6 +437,7 @@
     // phones start with the trunk visible and each branch folded one level down
     data.people.filter(p => p.gen >= 4 && data.people.some(c => c.parent === p.id)).forEach(p => state.collapsed.add(p.id));
   }
+  document.body.classList.add('view-tree');
   applyLang();
   update();
   requestAnimationFrame(() => fit(false));

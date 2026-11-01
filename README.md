@@ -31,6 +31,17 @@ and for a box of several sons, `group: true` with a `members` array.
 
 Commit and push — GitHub Pages republishes automatically.
 
+## Eras (the Timeline view)
+
+`data/family.json → eras` holds one entry per generation: an estimated birth
+year (`born`), the active span, a title, four short "what was happening in
+India / Bihar" notes in Hindi and English, and an `icon` naming one of the
+caricature symbols in `index.html` (`ship`, `sepoy`, `train`, `charkha`,
+`flag`, `tractor`, `computer`, `rocket`). The years are estimates (about 28
+years per generation, counted back from the youngest generation born in the
+1990s) — replace them with real dates when known. `eras_note_hi/en` is the
+disclaimer shown above the timeline.
+
 ## Running locally
 
 ```bash

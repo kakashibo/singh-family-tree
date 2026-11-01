@@ -22,6 +22,122 @@
     "confirm_hi": "संभावित पहचान — पुष्टि करें", "confirm_en": "Possible identification — please confirm",
     "childless_hi": "✗ नावल्द = निःसंतान", "childless_en": "✗ nāvald = without issue"
   },
+  "eras_note_hi": "वर्ष अनुमानित हैं — सबसे नई पीढ़ी (जन्म 1990 के दशक) से पीछे लगभग 28 वर्ष प्रति पीढ़ी गिनकर; ±20 वर्ष का अन्तर संभव। जन्म-तिथियाँ मिलें तो family.json में सुधारें।",
+  "eras_note_en": "Years are estimates: about 28 years per generation, counted back from the youngest generation (born in the 1990s). Allow ±20 years; correct them in family.json once birth dates are known.",
+  "eras": [
+    { "gen": 1, "born": 1785, "span_hi": "1805–1845", "span_en": "1805–1845", "icon": "ship",
+      "title_hi": "कंपनी राज का विस्तार", "title_en": "The Company's India",
+      "events_hi": [
+        "बंगाल–बिहार पर ईस्ट इंडिया कंपनी का शासन; 1793 के स्थायी बन्दोबस्त से ज़मींदारी व्यवस्था पक्की हुई",
+        "1801 में अवध के नवाब ने दोआब और रुहेलखंड कंपनी को सौंपे — पश्चिमी उत्तर प्रदेश (परिवार का मूल क्षेत्र) अंग्रेज़ी शासन में आया",
+        "1803 में दिल्ली पर क़ब्ज़ा, 1818 तक मराठे पराजित — कंपनी भारत की सबसे बड़ी शक्ति",
+        "तिरहुत–चम्पारण में नील और अफ़ीम की खेती फैली; गंगा–गंडक के नदी-व्यापार का युग"
+      ],
+      "events_en": [
+        "The East India Company rules Bengal and Bihar; the Permanent Settlement of 1793 fixes the zamindari system",
+        "1801: the Nawab of Awadh cedes the Doab and Rohilkhand — western Uttar Pradesh, the family's ancestral region, comes under British rule",
+        "Delhi taken in 1803; the Marathas defeated by 1818 — the Company is now India's dominant power",
+        "Indigo and opium cultivation spreads across Tirhut and Champaran; river trade on the Ganga and Gandak"
+      ] },
+    { "gen": 2, "born": 1815, "span_hi": "1835–1875", "span_en": "1835–1875", "icon": "sepoy",
+      "title_hi": "1857 की क्रांति", "title_en": "The Revolt of 1857",
+      "events_hi": [
+        "1853 में पहली रेल (बम्बई–ठाणे), 1854 में तार; 1856 में अवध का विलय",
+        "1857: मेरठ, दिल्ली, कानपुर, लखनऊ में विद्रोह; बिहार में 80 वर्षीय बाबू कुँवर सिंह (जगदीशपुर) ने नेतृत्व किया",
+        "1858 में कंपनी समाप्त — भारत सीधे ब्रिटिश ताज के अधीन, महारानी विक्टोरिया की घोषणा",
+        "बिहार में नील की कोठियाँ बढ़ीं, किसानों पर दबाव बढ़ा"
+      ],
+      "events_en": [
+        "India's first train runs in 1853 (Bombay–Thane), the telegraph in 1854; Awadh is annexed in 1856",
+        "1857: the Revolt at Meerut, Delhi, Kanpur and Lucknow; in Bihar, 80-year-old Babu Kunwar Singh of Jagdishpur leads the rising",
+        "1858: the Company is abolished and India passes to the British Crown — Queen Victoria's Proclamation",
+        "Indigo factories multiply in Bihar; pressure on tenant farmers grows"
+      ] },
+    { "gen": 3, "born": 1845, "span_hi": "1865–1905", "span_en": "1865–1905", "icon": "train",
+      "title_hi": "रेल, अकाल और कांग्रेस", "title_en": "Railways, famines and the Congress",
+      "events_hi": [
+        "1873–74 के बिहार अकाल के बाद राहत-कार्य के रूप में तिरहुत रेलवे (1874) बनी — उत्तर बिहार की पहली रेल",
+        "1877: दिल्ली दरबार में विक्टोरिया 'कैसर-ए-हिन्द'; 1876–78 और 1896–1900 के भीषण अकाल",
+        "1885 में भारतीय राष्ट्रीय कांग्रेस की स्थापना",
+        "डाकघर, नहरें और पक्की सड़कें गाँवों तक पहुँचने लगीं"
+      ],
+      "events_en": [
+        "After the Bihar famine of 1873–74, the Tirhut Railway (1874) is built as relief work — north Bihar's first line",
+        "1877: Victoria proclaimed Empress of India at the Delhi Durbar; great famines in 1876–78 and 1896–1900",
+        "1885: the Indian National Congress is founded",
+        "Post offices, canals and metalled roads begin to reach the villages"
+      ] },
+    { "gen": 4, "born": 1875, "span_hi": "1895–1935", "span_en": "1895–1935", "icon": "charkha",
+      "title_hi": "गांधी और चम्पारण", "title_en": "Gandhi comes to Champaran",
+      "events_hi": [
+        "1905 बंग-भंग और स्वदेशी; 1912 में बिहार–उड़ीसा अलग प्रान्त बना, पटना राजधानी",
+        "1917: चम्पारण सत्याग्रह — गांधी का भारत में पहला आन्दोलन; रास्ते में वे मुज़फ़्फ़रपुर रुके",
+        "1919 जलियाँवाला बाग़; 1920–22 का असहयोग आन्दोलन गाँव-गाँव पहुँचा",
+        "15 जनवरी 1934: बिहार का महाभूकम्प — मुज़फ़्फ़रपुर, मोतिहारी, दरभंगा तबाह"
+      ],
+      "events_en": [
+        "1905 Partition of Bengal and Swadeshi; 1912: Bihar and Orissa become a separate province with Patna as capital",
+        "1917: the Champaran Satyagraha, Gandhi's first movement in India; he stops at Muzaffarpur on the way",
+        "1919 Jallianwala Bagh; the Non-Cooperation movement of 1920–22 reaches every village",
+        "15 January 1934: the great Bihar earthquake flattens Muzaffarpur, Motihari and Darbhanga"
+      ] },
+    { "gen": 5, "born": 1905, "span_hi": "1925–1965", "span_en": "1925–1965", "icon": "flag",
+      "title_hi": "आज़ादी", "title_en": "Freedom",
+      "events_hi": [
+        "1930 नमक सत्याग्रह; 1942 'भारत छोड़ो' — बिहार सबसे उग्र केन्द्रों में",
+        "15 अगस्त 1947: स्वतंत्रता — और विभाजन",
+        "1950 संविधान लागू; बिहार के डॉ. राजेन्द्र प्रसाद पहले राष्ट्रपति; ज़मींदारी समाप्त करने वाला पहला राज्य बिहार",
+        "1951–52 में पहला आम चुनाव — हर वयस्क को वोट"
+      ],
+      "events_en": [
+        "1930 Salt Satyagraha; 1942 Quit India — Bihar among its fiercest centres",
+        "15 August 1947: Independence, and Partition",
+        "1950: the Constitution comes into force; Bihar's Dr Rajendra Prasad is the first President; Bihar is the first state to abolish zamindari",
+        "1951–52: the first general election — every adult gets a vote"
+      ] },
+    { "gen": 6, "born": 1935, "span_hi": "1955–1995", "span_en": "1955–1995", "icon": "tractor",
+      "title_hi": "नया भारत — हरित क्रांति और जेपी", "title_en": "New India: Green Revolution and JP",
+      "events_hi": [
+        "पंचवर्षीय योजनाएँ, बाँध और कारख़ाने; 1962, 1965, 1971 के युद्ध",
+        "1966–67 का बिहार अकाल; फिर हरित क्रांति — ट्रैक्टर, नलकूप, नई किस्में",
+        "1974: पटना से जयप्रकाश नारायण का 'सम्पूर्ण क्रांति' आन्दोलन; 1975–77 आपातकाल",
+        "1982 रंगीन टीवी और एशियाड, 1983 क्रिकेट विश्व कप — दूरदर्शन गाँवों तक"
+      ],
+      "events_en": [
+        "Five-year plans, dams and factories; wars in 1962, 1965 and 1971",
+        "The Bihar famine of 1966–67, then the Green Revolution — tractors, tube wells, new seed",
+        "1974: Jayaprakash Narayan's 'Total Revolution' movement starts from Patna; the Emergency, 1975–77",
+        "1982 colour TV and the Asian Games, 1983 cricket World Cup — Doordarshan reaches the villages"
+      ] },
+    { "gen": 7, "born": 1965, "span_hi": "1985–2025", "span_en": "1985–2025", "icon": "computer",
+      "title_hi": "उदारीकरण और सूचना-युग", "title_en": "Liberalisation and the information age",
+      "events_hi": [
+        "1991 आर्थिक उदारीकरण; केबल टीवी, मारुति, 1995 में मोबाइल और इंटरनेट",
+        "1998 पोखरण परमाणु परीक्षण; 2000 में बिहार से झारखंड अलग",
+        "आईटी और कॉल-सेंटर का उभार — नौजवान बेंगलुरु, दिल्ली और विदेश की ओर",
+        "2008 कोसी की बाढ़; उसी वर्ष चन्द्रयान-1 चाँद तक"
+      ],
+      "events_en": [
+        "1991 economic liberalisation; cable TV, the Maruti, and in 1995 mobile phones and the internet",
+        "1998 Pokhran nuclear tests; 2000: Jharkhand is carved out of Bihar",
+        "The IT and call-centre boom — the young move to Bengaluru, Delhi and abroad",
+        "2008: the Kosi floods; the same year Chandrayaan-1 reaches the Moon"
+      ] },
+    { "gen": 8, "born": 1995, "span_hi": "2015 से अब तक", "span_en": "2015 onward", "icon": "rocket",
+      "title_hi": "डिजिटल भारत", "title_en": "Digital India",
+      "events_hi": [
+        "आधार, 2016 में जियो और UPI — हर हाथ में स्मार्टफ़ोन, हर दुकान पर QR",
+        "2020–21 कोविड महामारी और देशव्यापी लॉकडाउन",
+        "2023: चन्द्रयान-3 चाँद के दक्षिणी ध्रुव पर उतरा; भारत सबसे अधिक आबादी वाला देश और 5वीं बड़ी अर्थव्यवस्था",
+        "2026: यह वंशावली अब वेबसाइट पर"
+      ],
+      "events_en": [
+        "Aadhaar, then Jio and UPI in 2016 — a smartphone in every hand, a QR code at every shop",
+        "2020–21: the COVID pandemic and the nationwide lockdown",
+        "2023: Chandrayaan-3 lands at the Moon's south pole; India becomes the most populous country and the 5th-largest economy",
+        "2026: this vanshavali goes online"
+      ] }
+  ],
   "people": [
     { "id": "dullah", "hi": "दुल्लह सिंह", "en": "Dullah Singh", "gen": 1, "branch": "root", "parent": null,
       "tag_hi": "बमौरा में बसे", "tag_en": "settled at Bamaura" },
@@ -100,31 +216,22 @@
     { "id": "ramsagar", "hi": "रामसागर सिंह", "en": "Ramsagar Singh", "gen": 7, "branch": "bamaura", "parent": "brijvanshi", "uncertain": true, "uncertainLink": true },
     { "id": "ramsevak", "hi": "रामसेवक सिंह", "en": "Ramsevak Singh", "gen": 7, "branch": "bamaura", "parent": "ramratan", "uncertain": true, "uncertainLink": true },
     { "id": "kumbheshwar", "hi": "कुम्भेश्वर सिंह", "en": "Kumbheshwar Singh", "gen": 7, "branch": "bamaura", "parent": "ramudgar", "uncertain": true, "uncertainLink": true },
-    { "id": "ramnaresh_sons", "group": true, "gen": 7, "branch": "bamaura", "parent": "ramnaresh", "uncertain": true, "uncertainLink": true,
-      "hi": "रामनरेश सिंह के पुत्र", "en": "Sons of Ramnaresh Singh",
-      "note_hi": "पुत्र — नाम आंशिक पठनीय, क्रम अनुमानित", "note_en": "sons, partly legible; order inferred",
-      "members": [
-        { "hi": "विश्वनाथ", "en": "Vishwanath", "uncertain": true },
-        { "hi": "पंचू", "en": "Panchu", "uncertain": true },
-        { "hi": "अजानी", "en": "Ajani", "uncertain": true },
-        { "hi": "कीरत", "en": "Keerat", "uncertain": true },
-        { "hi": "हरिदेव", "en": "Haridev", "uncertain": true },
-        { "hi": "नकुल", "en": "Nakul", "uncertain": true },
-        { "hi": "अरविंद", "en": "Arvind", "uncertain": true },
-        { "hi": "सुखदेव", "en": "Sukhdev", "uncertain": true },
-        { "hi": "चन्द्रिका", "en": "Chandrika", "uncertain": true }
-      ] },
+    { "id": "pawan_kumar", "hi": "पवन कुमार सिंह", "en": "Pawan Kumar Singh", "gen": 7, "branch": "bamaura", "parent": "ramnaresh" },
+    { "id": "lalit_kumar", "hi": "ललित कुमार सिंह", "en": "Lalit Kumar Singh", "gen": 7, "branch": "bamaura", "parent": "ramnaresh" },
     { "id": "dhurjeet", "hi": "धुरजीत सिंह", "en": "Dhurjeet Singh", "gen": 7, "branch": "sahitgarhi", "parent": "rampukar", "uncertain": true, "uncertainLink": true },
     { "id": "ajit", "hi": "अजीत सिंह", "en": "Ajit Singh", "gen": 7, "branch": "sahitgarhi", "parent": "rampukar" },
 
-    { "id": "ajit_sons", "group": true, "gen": 8, "branch": "sahitgarhi", "parent": "ajit", "confirm": true, "uncertainLink": true,
+    { "id": "yashashwi", "hi": "यशस्वी सिंह", "en": "Yashashwi Singh", "gen": 8, "branch": "bamaura", "parent": "pawan_kumar" },
+    { "id": "apurv", "hi": "अपूर्व सिंह", "en": "Apurv Singh", "gen": 8, "branch": "bamaura", "parent": "lalit_kumar" },
+    { "id": "watan", "hi": "वतन राज", "en": "Watan Raj", "gen": 8, "branch": "bamaura", "parent": "lalit_kumar" },
+
+    { "id": "ajit_sons", "group": true, "gen": 8, "branch": "sahitgarhi", "parent": "ajit", "uncertain": true, "uncertainLink": true,
       "hi": "अजीत सिंह के पुत्र", "en": "Sons of Ajit Singh",
-      "note_hi": "⭐ संभवतः पवन कुमार सिंह — जुड़ाव अनुमानित, पुष्टि करें",
-      "note_en": "⭐ possibly Pawan Kumar Singh — link inferred, please confirm",
+      "note_hi": "पुत्र — नाम आंशिक पठनीय", "note_en": "sons, partly legible",
       "members": [
         { "hi": "सुरेश", "en": "Suresh", "uncertain": true },
         { "hi": "नावल्द", "en": "(no issue)", "childless": true },
-        { "hi": "पवन", "en": "Pawan", "highlight": true },
+        { "hi": "पवन", "en": "Pawan" },
         { "hi": "कमल / करन", "en": "Kamal / Karan", "uncertain": true },
         { "hi": "विनोद", "en": "Vinod" },
         { "hi": "प्रमोद", "en": "Pramod" },
